@@ -9,16 +9,33 @@ const PORT = process.env.PORT || 3001;
 
 app.use(
   cors({
-    origin: [
-      "http://localhost:3000",
-      "https://rsmk.me",
-      "https://budgetbuddy.rsmk.co.in",
-      "https://colorohm.rsmk.me",
-      "https://sfmd.rsmk.co.in",
-      "https://zestacademy.tech",
-      "https://zestfolio.zestacademy.tech",
-      "https://compilers.zestacademy.tech",
-    ],
+    origin: function (origin, callback) {
+      if (!origin) return callback(null, true);
+
+      const allowedOrigins = [
+        "http://localhost:3000",
+        "https://rsmk.me",
+        "https://zestacademy.tech",
+        "https://zestfolio.zestacademy.tech",
+        "https://compilers.zestacademy.tech",
+      ];
+
+      const allowedSuffixes = [
+        ".rsmk.me",
+        ".rsmk.co.in",
+        ".vercel.app",
+      ];
+
+      const isAllowed =
+        allowedOrigins.includes(origin) ||
+        allowedSuffixes.some((suffix) => origin.endsWith(suffix));
+
+      if (isAllowed) {
+        callback(null, true);
+      } else {
+        callback(new Error("Not allowed by CORS"));
+      }
+    },
   })
 );
 app.use(express.json());
