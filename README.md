@@ -212,24 +212,45 @@ curl -X POST http://localhost:3001/api/chat \
 
 ---
 
-## How Websites Embed Mani
+## Calling the API (Frontend Integration)
 
-Any RSMK website can connect to Mani with a single fetch call:
+Any authorized RSMK website or frontend (like `mani-ui`) can connect to Mani with a straightforward fetch call to the `/api/chat` endpoint. 
 
-```js
-const response = await fetch("https://mani-core.onrender.com/api/chat", {
-  method: "POST",
-  headers: { "Content-Type": "application/json" },
-  body: JSON.stringify({
-    query: userMessage,
-    siteContext: "User is browsing the RSMK portfolio website.",
-    history: conversationHistory
-  })
-});
+Here is a quick example of how you send a question and get an answer:
 
-const data = await response.json();
-console.log(data.response);
+```javascript
+const chatWithMani = async (userMessage, conversationHistory = []) => {
+  try {
+    const response = await fetch("http://localhost:3001/api/chat", { // Or your production URL
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        query: userMessage,
+        // Optional context about the site the user is chatting from
+        siteContext: "User is browsing the main RSMK ecosystem interface.",
+        // History ensures Mani remembers the context of the conversation
+        history: conversationHistory 
+      })
+    });
+
+    const data = await response.json();
+    
+    if (data.success) {
+      console.log("Mani says:", data.response);
+      return data.response;
+    } else {
+      console.error("Mani Error:", data.error);
+    }
+  } catch (error) {
+    console.error("Network Error:", error);
+  }
+};
 ```
+
+> **Note on CORS:** Ensure your frontend URL is allowlisted in the backend `cors` configuration, or the request will be blocked.
+
+### Detailed Backend Documentation
+For more in-depth information about backend environment setup, API endpoint structure, and exact response formats, please refer to the **[Backend README](./backend/README.md)**.
 
 ---
 

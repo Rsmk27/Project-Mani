@@ -22,8 +22,7 @@ app.use(
 
       const allowedSuffixes = [
         ".rsmk.me",
-        ".rsmk.co.in",
-        ".vercel.app",
+        ".rsmk.co.in"
       ];
 
       const isAllowed =
