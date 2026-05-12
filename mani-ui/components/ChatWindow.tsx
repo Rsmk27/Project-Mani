@@ -66,15 +66,17 @@ export default function ChatWindow() {
               >
                 {/* Hero */}
                 <div className="text-center relative w-full flex flex-col items-center">
-                  <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-32 h-32 bg-[#38c8f1]/10 blur-[50px] rounded-full pointer-events-none"></div>
-                  {/* Changed the M avatar to the new logo with native colors inside a dark wrapper for pure electric aesthetic */}
-                  <div className="relative w-32 h-32 rounded-[2.5rem] bg-[#0c0c0e]/80 flex items-center justify-center shadow-[0_0_40px_rgba(56,200,241,0.2)] border border-[#38c8f1]/20 overflow-hidden mb-6">
-                    <Image src="/rsmk.svg" alt="RSMK Logo" width={90} height={90} className="object-contain" />
+                  <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-40 h-40 bg-[#38c8f1]/10 blur-[60px] rounded-full pointer-events-none"></div>
+                  
+                  <div className="relative w-28 h-28 rounded-[2rem] bg-[#09090b] flex items-center justify-center shadow-[0_0_40px_rgba(56,200,241,0.15)] border border-white/10 overflow-hidden mb-8 group hover:border-[#38c8f1]/40 transition-colors duration-500">
+                    <div className="absolute inset-0 bg-gradient-to-br from-[#38c8f1]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    <Image src="/rsmk.svg" alt="RSMK Logo" width={64} height={64} className="object-contain relative z-10 drop-shadow-[0_0_15px_rgba(255,255,255,0.1)]" />
                   </div>
-                  <h2 className="text-4xl md:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-white via-[#e0f2fe] to-[#38c8f1] mb-4 tracking-tight text-center">
+                  
+                  <h2 className="text-4xl md:text-5xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-white to-[#a1a1aa] mb-4 tracking-tight text-center">
                     Hi, I&apos;m Mani
                   </h2>
-                  <p className="text-[#a1a1aa] text-base md:text-lg max-w-lg mx-auto leading-relaxed text-center">
+                  <p className="text-[#a1a1aa] text-base md:text-lg max-w-lg mx-auto leading-relaxed text-center font-light">
                     The official AI assistant of RSMK Technologies. Ask me
                     anything about our projects, ecosystem, or vision.
                   </p>
