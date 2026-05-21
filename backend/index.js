@@ -52,13 +52,32 @@ app.get("/", (req, res) => {
 app.post("/api/chat", async (req, res) => {
   const { query, siteContext = "", history = [] } = req.body;
 
-  if (!query || query.trim() === "") {
-    return res.status(400).json({ error: "Query is required." });
+  if (!query || typeof query !== "string" || query.trim() === "") {
+    return res.status(400).json({ error: "Query is required and must be a string." });
   }
+
+  if (typeof siteContext !== "string") {
+    return res.status(400).json({ error: "Site context must be a string." });
+  }
+
+  if (!Array.isArray(history)) {
+    return res.status(400).json({ error: "History must be an array." });
+  }
+
+  // Security enhancement: Prevent prompt injection via history
+  const sanitizedHistory = history.map(msg => {
+    if (!msg || typeof msg !== 'object') {
+      return { role: 'user', content: '' };
+    }
+    return {
+      role: msg.role === 'assistant' ? 'assistant' : 'user',
+      content: typeof msg.content === 'string' ? msg.content : ''
+    };
+  });
 
   try {
     const systemPrompt = buildSystemPrompt(siteContext);
-    const response = await callGroq(systemPrompt, query, history);
+    const response = await callGroq(systemPrompt, query, sanitizedHistory);
 
     res.json({
       success: true,
@@ -66,7 +85,8 @@ app.post("/api/chat", async (req, res) => {
       model: "llama-3.3-70b-versatile",
     });
   } catch (err) {
-    res.status(500).json({ success: false, error: err.message });
+    console.error("Chat endpoint error:", err);
+    res.status(500).json({ success: false, error: "An internal server error occurred." });
   }
 });
 
