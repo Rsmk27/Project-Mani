@@ -14,6 +14,7 @@ app.use(
 
       const allowedOrigins = [
         "https://rsmk.me",
+        "https://rsmk.co.in",
         "https://zestacademy.tech",
         "https://zestfolio.zestacademy.tech",
         "https://compilers.zestacademy.tech",
