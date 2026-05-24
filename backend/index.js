@@ -13,7 +13,6 @@ app.use(
       if (!origin) return callback(null, true);
 
       const allowedOrigins = [
-        "http://localhost:3000",
         "https://rsmk.me",
         "https://zestacademy.tech",
         "https://zestfolio.zestacademy.tech",
@@ -25,7 +24,11 @@ app.use(
         ".rsmk.co.in"
       ];
 
+      // Allow all localhost addresses
+      const isLocalhost = origin.startsWith("http://localhost:") || origin.startsWith("http://127.0.0.1:");
+
       const isAllowed =
+        isLocalhost ||
         allowedOrigins.includes(origin) ||
         allowedSuffixes.some((suffix) => origin.endsWith(suffix));
 
