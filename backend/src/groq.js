@@ -1,12 +1,12 @@
-require("dotenv").config();
 const Groq = require("groq-sdk");
+
 const groq = new Groq({ apiKey: process.env.GROQ_API_KEY });
 
 async function callGroq(systemPrompt, userMessage, history = []) {
   try {
     const messages = [
       { role: "system", content: systemPrompt },
-      ...history.slice(-8), // last 4 turns of conversation
+      ...history.slice(-8),
       { role: "user", content: userMessage },
     ];
 
@@ -17,13 +17,12 @@ async function callGroq(systemPrompt, userMessage, history = []) {
       temperature: 0.7,
     });
 
-    return (
-      completion.choices[0]?.message?.content ||
-      "I couldn't generate a response. Please try again."
-    );
+    return completion.choices[0]?.message?.content || "I couldn't generate a response. Please try again.";
   } catch (err) {
     throw new Error(`Groq Error: ${err.message}`);
   }
 }
 
-module.exports = { callGroq };
+module.exports = {
+  callGroq,
+};

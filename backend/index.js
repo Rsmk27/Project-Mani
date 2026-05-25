@@ -3,85 +3,79 @@ const express = require("express");
 const cors = require("cors");
 const { callGroq } = require("./src/groq");
 const { buildSystemPrompt } = require("./src/prompt");
+const { validateChatRequest } = require("./src/validator");
+const { recordRequest, getStatus } = require("./src/stats");
 
 const app = express();
 const PORT = process.env.PORT || 3001;
+
+const allowedOrigins = [
+  "https://rsmk.me",
+  "https://rsmk.co.in",
+  "https://zestacademy.tech",
+  "https://zestfolio.zestacademy.tech",
+  "https://compilers.zestacademy.tech",
+];
 
 app.use(
   cors({
     origin: function (origin, callback) {
       if (!origin) return callback(null, true);
 
-      const allowedOrigins = [
-        "https://rsmk.me",
-        "https://rsmk.co.in",
-        "https://zestacademy.tech",
-        "https://zestfolio.zestacademy.tech",
-        "https://compilers.zestacademy.tech",
-      ];
+      try {
+        const parsed = new URL(origin);
+        const hostname = parsed.hostname;
 
-      const allowedSuffixes = [
-        ".rsmk.me",
-        ".rsmk.co.in"
-      ];
+        if (allowedOrigins.includes(origin)) {
+          return callback(null, true);
+        }
 
-      // Allow all localhost addresses
-      const isLocalhost = origin.startsWith("http://localhost:") || origin.startsWith("http://127.0.0.1:");
+        if (hostname === "localhost" || hostname === "127.0.0.1") {
+          return callback(null, true);
+        }
 
-      const isAllowed =
-        isLocalhost ||
-        allowedOrigins.includes(origin) ||
-        allowedSuffixes.some((suffix) => origin.endsWith(suffix));
+        if (hostname.endsWith(".rsmk.me") || hostname.endsWith(".rsmk.co.in")) {
+          return callback(null, true);
+        }
 
-      if (isAllowed) {
-        callback(null, true);
-      } else {
         callback(new Error("Not allowed by CORS"));
+      } catch (err) {
+        callback(new Error("Invalid Origin"));
       }
     },
   })
 );
+
 app.use(express.json());
 
-// Health check
+// GET / -> health check
 app.get("/", (req, res) => {
   res.json({
     status: "Mani Core is live 🧠",
-    version: "1.0.0",
+    version: "1.2.0",
     model: "llama-3.3-70b-versatile",
   });
 });
 
-// Core chat endpoint
+// GET /api/status -> stats check
+app.get("/api/status", (req, res) => {
+  res.json(getStatus());
+});
+
+// POST /api/chat -> chat endpoint
 app.post("/api/chat", async (req, res) => {
-  const { query, siteContext = "", history = [] } = req.body;
-
-  if (!query || typeof query !== "string" || query.trim() === "") {
-    return res.status(400).json({ error: "Query is required and must be a string." });
+  const validation = validateChatRequest(req.body);
+  if (!validation.valid) {
+    return res.status(validation.status).json({ error: validation.error });
   }
 
-  if (typeof siteContext !== "string") {
-    return res.status(400).json({ error: "Site context must be a string." });
-  }
-
-  if (!Array.isArray(history)) {
-    return res.status(400).json({ error: "History must be an array." });
-  }
-
-  // Security enhancement: Prevent prompt injection via history
-  const sanitizedHistory = history.map(msg => {
-    if (!msg || typeof msg !== 'object') {
-      return { role: 'user', content: '' };
-    }
-    return {
-      role: msg.role === 'assistant' ? 'assistant' : 'user',
-      content: typeof msg.content === 'string' ? msg.content : ''
-    };
-  });
+  const { query, siteContext, history } = validation.data;
 
   try {
     const systemPrompt = buildSystemPrompt(siteContext);
-    const response = await callGroq(systemPrompt, query, sanitizedHistory);
+    const response = await callGroq(systemPrompt, query, history);
+
+    recordRequest({ success: true, queryLength: query.length });
 
     res.json({
       success: true,
@@ -89,11 +83,11 @@ app.post("/api/chat", async (req, res) => {
       model: "llama-3.3-70b-versatile",
     });
   } catch (err) {
-    console.error("Chat endpoint error:", err);
-    res.status(500).json({ success: false, error: "An internal server error occurred." });
+    recordRequest({ success: false, queryLength: query.length });
+    res.status(500).json({ success: false, error: err.message });
   }
 });
 
 app.listen(PORT, () => {
-  console.log(`🧠 Mani Core running on port ${PORT}`);
+  console.log(`🧠 Mani Core v1.2.0 running on port ${PORT}`);
 });

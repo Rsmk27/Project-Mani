@@ -1,0 +1,118 @@
+{
+  "education": {
+    "degree": "B.Tech in Electrical and Electronics Engineering (EEE)",
+    "institution": "Andhra Loyola Institute of Engineering and Technology (ALIET)",
+    "location": "Vijayawada, Andhra Pradesh, India",
+    "cgpa": 7.5,
+    "status": "Final Year (2025 batch)"
+  },
+  "internship": {
+    "company": "Coromandel International Limited",
+    "role": "Intern",
+    "domain": "Electrical / Industrial"
+  },
+  "skills": {
+    "hardware": [
+      "ESP32-WROOM",
+      "ESP8266",
+      "Arduino UNO",
+      "Arduino Nano",
+      "Arduino WiFi",
+      "NEO-6M GPS",
+      "MPU-6050",
+      "DHT11",
+      "MQ-2",
+      "TP4056",
+      "L298N Motor Driver",
+      "ESP32-CAM"
+    ],
+    "frontend": [
+      "React",
+      "React Native",
+      "Expo",
+      "Vite",
+      "Next.js",
+      "TailwindCSS",
+      "NativeWind",
+      "Framer Motion",
+      "HTML",
+      "CSS",
+      "JavaScript"
+    ],
+    "backend": [
+      "Node.js",
+      "Express.js",
+      "Firebase (Auth/Firestore/RTDB/Functions)",
+      "REST APIs",
+      "Groq API",
+      "Anthropic Claude API"
+    ],
+    "ai_ml": [
+      "Prompt Engineering",
+      "RAG",
+      "LLM Integration (Groq/Claude/Gemini)",
+      "AI Agent Design",
+      "Fine-tuning (QLoRA/LoRA/PEFT)",
+      "Hugging Face",
+      "LangChain",
+      "OpenCV",
+      "YOLOv8"
+    ],
+    "tools": [
+      "VS Code",
+      "GitHub Copilot",
+      "Git & GitHub",
+      "Vercel",
+      "Render",
+      "EAS Build",
+      "MATLAB",
+      "Simulink",
+      "Solid Edge",
+      "Postman",
+      "Firebase Console"
+    ]
+  },
+  "achievements": [
+    {
+      "title": "2nd Prize – Hardware Category",
+      "event": "A-HACKS 2026 Hackathon",
+      "project": "SFMD",
+      "description": "Led 4-member team, ESP32 wearable IoT safety device with Firebase + React Native app"
+    }
+  ],
+  "workshops": [
+    {
+      "title": "Foundational ML to Advanced Gen AI",
+      "role": "Facilitator",
+      "topics": [
+        "ML Fundamentals",
+        "LLMs",
+        "Fine-tuning",
+        "LoRA",
+        "RAG",
+        "GANs",
+        "Diffusion Models",
+        "Hugging Face",
+        "LangChain",
+        "AI Agents"
+      ]
+    }
+  ],
+  "career_interests": [
+    "Embedded Systems/IoT Engineer",
+    "AI/ML Engineer",
+    "Full-Stack Developer",
+    "PSU Roles (BHEL/NTPC/PGCIL)",
+    "GATE 2026"
+  ],
+  "personal_brand": {
+    "name": "RSMK Technologies",
+    "domain": "rsmk.me",
+    "tagline": "AI for easy life.",
+    "sub_brands": [
+      "RSMK AI",
+      "ZestAcademy",
+      "ZestFolio"
+    ]
+  }
+}

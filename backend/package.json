@@ -1,10 +1,10 @@
 {
   "name": "project-mani",
-  "version": "1.0.0",
+  "version": "1.2.0",
   "description": "> The AI brain of RSMK Technologies — a smart, fast, and free personal AI assistant that knows everything about RSMK Technologies and powers intelligent chat across all RSMK websites.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node index.js"
   },
   "repository": {
     "type": "git",
