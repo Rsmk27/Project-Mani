@@ -5,7 +5,7 @@ class Settings(BaseSettings):
     # Telegram settings
     TELEGRAM_BOT_TOKEN: str
     TELEGRAM_SECRET_TOKEN: str = "super_secret_token"  # For webhook verification
-    WEBHOOK_URL: str
+    WEBHOOK_URL: Optional[str] = None
 
     # Backend settings
     BACKEND_API_URL: str

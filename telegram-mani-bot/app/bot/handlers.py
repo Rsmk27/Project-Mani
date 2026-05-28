@@ -1,7 +1,7 @@
 import asyncio
 from telegram import Update
 from telegram.ext import ContextTypes
-from telegram.constants import ChatAction
+from telegram.constants import ChatAction, ParseMode
 
 from app.services.api_client import api_client, APIClientError
 from app.utils.logger import logger
@@ -60,8 +60,12 @@ async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE) -> 
         # Cancel typing indicator
         typing_task.cancel()
 
-        # Send reply to user
-        await update.message.reply_text(reply_text)
+        # Send reply to user as Markdown, fallback to plain text if markdown parsing fails
+        try:
+            await update.message.reply_text(reply_text, parse_mode=ParseMode.MARKDOWN)
+        except Exception as parse_err:
+            logger.warning(f"Failed to send formatted markdown message to user {user.id}: {str(parse_err)}. Falling back to plain text.")
+            await update.message.reply_text(reply_text)
 
     except APIClientError as e:
         typing_task.cancel()
