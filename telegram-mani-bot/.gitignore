@@ -1,1 +1,5 @@
-.env\nuvicorn.log\n__pycache__\nvenv/
+.env
+uvicorn.log
+__pycache__/
+venv/
+*.pyc
