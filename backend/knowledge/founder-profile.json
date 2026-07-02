@@ -58,6 +58,22 @@
       "OpenCV",
       "YOLOv8"
     ],
+    "industrial_automation": [
+      "PLC Programming",
+      "Ladder Logic",
+      "Factory I/O",
+      "Ignition SCADA",
+      "OpenPLC",
+      "EasyPLC",
+      "HMI Development",
+      "SCADA",
+      "Industrial Communication"
+    ],
+    "future_focus": [
+      "AI-assisted Industrial Automation",
+      "Industrial IoT",
+      "Smart Manufacturing"
+    ],
     "tools": [
       "VS Code",
       "GitHub Copilot",
@@ -98,13 +114,42 @@
       ]
     }
   ],
-  "career_interests": [
-    "Embedded Systems/IoT Engineer",
-    "AI/ML Engineer",
-    "Full-Stack Developer",
-    "PSU Roles (BHEL/NTPC/PGCIL)",
-    "GATE 2026"
-  ],
+  "career_positioning": "Electrical & Electronics Engineer specializing in Industrial Automation, Embedded Systems, IoT, and AI-driven engineering solutions.",
+  "career_interests": {
+    "primary_goal": "Build a career in Industrial Automation and Embedded Systems, with AI serving as an enhancement rather than the main focus.",
+    "roles": [
+      "Industrial Automation Engineer",
+      "Embedded Systems/IoT Engineer",
+      "Full-Stack Developer",
+      "PSU Roles (BHEL/NTPC/PGCIL)",
+      "GATE 2026"
+    ],
+    "long_term_objective": "Building RSMK Technologies"
+  },
+  "industrial_automation_roadmap": {
+    "path": [
+      "PLC Fundamentals",
+      "Ladder Logic",
+      "HMI",
+      "SCADA",
+      "Industrial Networking",
+      "Embedded Systems Integration",
+      "AI + Automation"
+    ],
+    "current_focus": "Mastering PLC programming before moving to higher-level industrial technologies."
+  },
+  "learning_philosophy": "Building practical skills, creating industry-relevant projects, learning by doing, and prioritizing hands-on experience over collecting certificates.",
+  "portfolio_evolution": "Evolving from a project showcase into a professional engineering portfolio focused on Industrial Automation, Embedded Systems, IoT, Engineering Projects, Certifications, and Technical Documentation.",
+  "professional_branding": {
+    "status": "Complete professional branding transformation started",
+    "initiatives": [
+      "LinkedIn optimization",
+      "Resume redesign",
+      "Portfolio improvements",
+      "Consistent engineering-focused personal branding"
+    ],
+    "alignment": "Aligning public profile toward Industrial Automation and Embedded Engineering roles."
+  },
   "personal_brand": {
     "name": "RSMK Technologies",
     "domain": "rsmk.me",

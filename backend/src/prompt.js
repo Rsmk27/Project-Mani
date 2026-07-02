@@ -15,6 +15,8 @@ function buildSystemPrompt(siteContext = "") {
   const skillsFrontend = founderProfile.skills.frontend.join(", ");
   const skillsBackend = founderProfile.skills.backend.join(", ");
   const skillsAiMl = founderProfile.skills.ai_ml.join(", ");
+  const skillsIndustrialAutomation = founderProfile.skills.industrial_automation.join(", ");
+  const skillsFutureFocus = founderProfile.skills.future_focus.join(", ");
   const skillsTools = founderProfile.skills.tools.join(", ");
 
   const achievementsBlock = founderProfile.achievements
@@ -24,7 +26,14 @@ function buildSystemPrompt(siteContext = "") {
     )
     .join("\n");
 
-  const careerInterestsBlock = founderProfile.career_interests.join(", ");
+  const careerPositioning = founderProfile.career_positioning;
+  const careerPrimaryGoal = founderProfile.career_interests.primary_goal;
+  const careerRoles = founderProfile.career_interests.roles.join(", ");
+  const careerLongTerm = founderProfile.career_interests.long_term_objective;
+  const industrialRoadmap = `${founderProfile.industrial_automation_roadmap.path.join(" -> ")} (Current Focus: ${founderProfile.industrial_automation_roadmap.current_focus})`;
+  const learningPhilosophy = founderProfile.learning_philosophy;
+  const portfolioEvolution = founderProfile.portfolio_evolution;
+  const brandingTransformation = `${founderProfile.professional_branding.status}. Initiatives: ${founderProfile.professional_branding.initiatives.join(", ")} (${founderProfile.professional_branding.alignment})`;
 
   const systemPrompt = `
 You are Mani, the official AI assistant of RSMK Technologies.
@@ -46,14 +55,23 @@ You are Mani, the official AI assistant of RSMK Technologies.
 - Education: ${founderProfile.education.degree} from ${founderProfile.education.institution} (Location: ${founderProfile.education.location}, CGPA: ${founderProfile.education.cgpa}, Status: ${founderProfile.education.status})
 - Internship: ${founderProfile.internship.role} at ${founderProfile.internship.company} (Domain: ${founderProfile.internship.domain})
 - Skills:
-  - Hardware: ${skillsHardware}
-  - Frontend: ${skillsFrontend}
-  - Backend: ${skillsBackend}
-  - AI/ML: ${skillsAiMl}
-  - Tools: ${skillsTools}
+  - Industrial Automation & SCADA: ${skillsIndustrialAutomation}
+  - Embedded Systems & Hardware: ${skillsHardware}
+  - Frontend Development: ${skillsFrontend}
+  - Backend Development: ${skillsBackend}
+  - AI/ML Technologies: ${skillsAiMl}
+  - Tools & Software: ${skillsTools}
+  - Future Tech Focus: ${skillsFutureFocus}
+- Career Positioning: ${careerPositioning}
+- Career Direction: ${careerPrimaryGoal}
+- Long-term Objective: ${careerLongTerm}
+- Target Engineering Roles: ${careerRoles}
+- Industrial Automation Learning Path: ${industrialRoadmap}
+- Learning Philosophy: ${learningPhilosophy}
+- Portfolio Evolution: ${portfolioEvolution}
+- Professional Branding Transformation: ${brandingTransformation}
 - Achievements:
 ${achievementsBlock}
-- Career Interests: ${careerInterestsBlock}
 - Links:
   - Portfolio: ${rsmkCore.founder.links.portfolio}
   - GitHub: ${rsmkCore.founder.links.github}
