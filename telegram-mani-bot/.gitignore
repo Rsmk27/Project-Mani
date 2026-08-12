@@ -1,5 +1,0 @@
-.env
-uvicorn.log
-__pycache__/
-venv/
-*.pyc

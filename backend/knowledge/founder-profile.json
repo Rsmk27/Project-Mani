@@ -1,16 +1,39 @@
 {
   "education": {
-    "degree": "B.Tech in Electrical and Electronics Engineering (EEE)",
-    "institution": "Andhra Loyola Institute of Engineering and Technology (ALIET)",
-    "location": "Vijayawada, Andhra Pradesh, India",
-    "cgpa": 7.5,
-    "status": "Final Year (2025 batch)"
+    "btech": {
+      "degree": "B.Tech in Electrical and Electronics Engineering (EEE) (Lateral Entry)",
+      "institution": "Andhra Loyola Institute of Engineering and Technology (ALIET)",
+      "location": "Vijayawada, Andhra Pradesh, India",
+      "cgpa": 7.5,
+      "batch": "2024–2027",
+      "status": "Final Year"
+    },
+    "diploma": {
+      "qualification": "Diploma in Electrical and Electronics Engineering (EEE)",
+      "institution": "Government Polytechnic, Srikakulam",
+      "location": "Srikakulam, Andhra Pradesh, India"
+    }
   },
-  "internship": {
-    "company": "Coromandel International Limited",
-    "role": "Intern",
-    "domain": "Electrical / Industrial"
-  },
+  "internships": [
+    {
+      "company": "Coromandel International Limited",
+      "role": "Electrical Engineering Intern",
+      "domain": "Electrical / Industrial Maintenance & Substation Operations",
+      "year": "2023"
+    },
+    {
+      "company": "Datavalley India (collaborating with APSCHE)",
+      "role": "Embedded Systems Intern",
+      "domain": "Embedded Systems & Firmware Development (Online)",
+      "duration": "May–June 2026"
+    },
+    {
+      "company": "SkillDzire",
+      "role": "Solar PV System Design Intern",
+      "domain": "Solar Grid Design & Inverter Modeling (Online)",
+      "duration": "May–June 2026"
+    }
+  ],
   "skills": {
     "hardware": [
       "ESP32-WROOM",
@@ -26,65 +49,35 @@
       "L298N Motor Driver",
       "ESP32-CAM"
     ],
-    "frontend": [
-      "React",
-      "React Native",
-      "Expo",
-      "Vite",
-      "Next.js",
-      "TailwindCSS",
-      "NativeWind",
-      "Framer Motion",
-      "HTML",
-      "CSS",
-      "JavaScript"
-    ],
-    "backend": [
-      "Node.js",
-      "Express.js",
-      "Firebase (Auth/Firestore/RTDB/Functions)",
-      "REST APIs",
-      "Groq API",
-      "Anthropic Claude API"
-    ],
-    "ai_ml": [
-      "Prompt Engineering",
-      "RAG",
-      "LLM Integration (Groq/Claude/Gemini)",
-      "AI Agent Design",
-      "Fine-tuning (QLoRA/LoRA/PEFT)",
-      "Hugging Face",
-      "LangChain",
-      "OpenCV",
-      "YOLOv8"
+    "software_web_development": [
+      "AI-Driven Software / Web Development using tools like Antigravity, Copilot, Claude, GPT"
     ],
     "industrial_automation": [
       "PLC Programming",
       "Ladder Logic",
+      "CODESYS",
       "Factory I/O",
-      "Ignition SCADA",
-      "OpenPLC",
-      "EasyPLC",
+      "Rockwell CCW",
+      "Modbus TCP",
       "HMI Development",
       "SCADA",
       "Industrial Communication"
     ],
     "future_focus": [
-      "AI-assisted Industrial Automation",
+      "Industrial Automation",
       "Industrial IoT",
       "Smart Manufacturing"
     ],
     "tools": [
       "VS Code",
+      "Antigravity",
       "GitHub Copilot",
       "Git & GitHub",
       "Vercel",
       "Render",
-      "EAS Build",
       "MATLAB",
       "Simulink",
       "Solid Edge",
-      "Postman",
       "Firebase Console"
     ]
   },
@@ -116,15 +109,38 @@
   ],
   "career_positioning": "Electrical & Electronics Engineer specializing in Industrial Automation, Embedded Systems, IoT, and AI-driven engineering solutions.",
   "career_interests": {
-    "primary_goal": "Build a career in Industrial Automation and Embedded Systems, with AI serving as an enhancement rather than the main focus.",
+    "primary_goal": "Build a career in Industrial Automation and Embedded Systems, while being open to all engineering roles eligible for a B.Tech EEE graduate.",
     "roles": [
       "Industrial Automation Engineer",
-      "Embedded Systems/IoT Engineer",
-      "Full-Stack Developer",
-      "PSU Roles (BHEL/NTPC/PGCIL)",
-      "GATE 2026"
+      "Embedded Systems / IoT Engineer",
+      "All entry-level engineering roles eligible for B.Tech EEE graduates"
     ],
-    "long_term_objective": "Building RSMK Technologies"
+    "long_term_objective": "Growth as a professional engineer"
+  },
+  "target_companies": [
+    "Siemens",
+    "Schneider Electric",
+    "ABB",
+    "Rockwell Automation",
+    "Honeywell",
+    "L&T",
+    "Danfoss",
+    "Yokogawa",
+    "Tata Power",
+    "Bosch",
+    "Texas Instruments",
+    "NXP",
+    "Microchip",
+    "Ather Energy",
+    "Ola Electric"
+  ],
+  "location_preferences": {
+    "primary": "South India (Bangalore, Hyderabad, Chennai, Visakhapatnam, Vijayawada, etc.)",
+    "flexibility": "Open to relocating anywhere across India if required"
+  },
+  "final_year_project_status": "Official final-year major project is currently in active development (target completion: April 2027).",
+  "project_technical_challenges": {
+    "SFMD": "Sensor integration of MPU6050: Due to lack of reliable working libraries, raw MPU6050 sensor values were extracted directly and processed using custom mathematical acceleration vector and tilt angle calculations to accurately detect movement and fall events."
   },
   "industrial_automation_roadmap": {
     "path": [
@@ -150,14 +166,373 @@
     ],
     "alignment": "Aligning public profile toward Industrial Automation and Embedded Engineering roles."
   },
-  "personal_brand": {
-    "name": "RSMK Technologies",
-    "domain": "rsmk.me",
-    "tagline": "AI for easy life.",
-    "sub_brands": [
-      "RSMK AI",
-      "ZestAcademy",
-      "ZestFolio"
-    ]
-  }
+  "certifications": [
+    {
+      "id": "CERT-002",
+      "title": "Electric Vehicle Technology",
+      "issuer": "ISTE Student Chapter",
+      "year": "2023",
+      "category": "Power & Electrical",
+      "credentialId": "NPTEL-EV-2023-M504",
+      "skills": ["Battery Pack Design", "BMS", "BLDC Motors", "Motor Controllers", "Thermal Management"],
+      "description": "Powertrain architecture, battery management systems (BMS), motor control circuits, and thermal management for electric vehicles."
+    },
+    {
+      "id": "CERT-003",
+      "title": "Drone Technology",
+      "issuer": "Aigen Labs",
+      "year": "2022",
+      "category": "Robotics & Hardware",
+      "credentialId": "SKYFI-DRN-2022-7910",
+      "skills": ["Quadcopter Dynamics", "ESC Calibration", "APM Flight Controller", "Telemetry", "Drone Assembly"],
+      "description": "Hands-on training in drone assembly, calibration of Electronic Speed Controllers (ESCs), flight controller configuration, and pilot training."
+    },
+    {
+      "id": "CERT-004",
+      "title": "3D Printing & Additive Mfg",
+      "issuer": "ISTE Student Chapter",
+      "year": "2022",
+      "category": "Robotics & Hardware",
+      "credentialId": "COURSERA-3DP-2022-8B2",
+      "skills": ["CAD Modeling", "Slicing (Cura)", "FDM Printers", "Material Science", "Prototyping"],
+      "description": "Mechanical design, CAD modeling, FDM printer calibrations, filament materials, and prototyping protocols."
+    },
+    {
+      "id": "CERT-005",
+      "title": "C Programming for Embedded Applications",
+      "issuer": "LinkedIn Learning",
+      "year": "2023",
+      "category": "Embedded & IoT",
+      "credentialId": "LIL-CPE-2023-A01",
+      "skills": ["C Programming", "Embedded C", "Memory Management", "Pointers", "Bitwise Operations"],
+      "description": "C programming methodologies tailored for memory-constrained embedded architectures and microcontroller systems."
+    },
+    {
+      "id": "CERT-006",
+      "title": "Learning Arduino: Foundations",
+      "issuer": "LinkedIn Learning",
+      "year": "2023",
+      "category": "Embedded & IoT",
+      "credentialId": "LIL-ARD-2023-F02",
+      "skills": ["Arduino IDE", "Prototyping", "GPIO Control", "Analog Sensors", "Serial Communication"],
+      "description": "Foundational training in hardware prototyping, sensor interfacing, and code development using the Arduino ecosystem."
+    },
+    {
+      "id": "CERT-007",
+      "title": "IoT Foundations: Fundamentals",
+      "issuer": "LinkedIn Learning",
+      "year": "2023",
+      "category": "Embedded & IoT",
+      "credentialId": "LIL-IOT-2023-F03",
+      "skills": ["IoT Networks", "Cloud Integration", "Sensors", "Data Telemetry", "MQTT"],
+      "description": "Study of IoT architectures, sensing layers, communications protocols, and cloud-to-device telemetry pipelines."
+    },
+    {
+      "id": "CERT-008",
+      "title": "Become a PLC Developer",
+      "issuer": "LinkedIn Learning",
+      "year": "2024",
+      "category": "Embedded & IoT",
+      "credentialId": "LIL-PLC-2024-D04",
+      "skills": ["PLC Coding", "Ladder Logic", "Industrial Automation", "HMI Systems", "SCADA"],
+      "description": "PLC programming structures, ladder diagram modeling, industrial sensor calibration, and automation control loops."
+    },
+    {
+      "id": "CERT-009",
+      "title": "Solar PV Design & Installation",
+      "issuer": "Skill Dzire",
+      "year": "2023",
+      "category": "Power & Electrical",
+      "type": "Internship",
+      "credentialId": "NPTEL-PV-2023-S09",
+      "skills": ["PV Modeling", "Solar Grid Design", "Inverters", "Energy Calculation", "Site Analysis"],
+      "description": "Designing solar photovoltaic power grids, specifying inverters, sizing battery arrays, and performing solar yield analysis."
+    },
+    {
+      "id": "CERT-010",
+      "title": "Google AI Essentials",
+      "issuer": "Google / Coursera",
+      "year": "2024",
+      "category": "AI & Software",
+      "type": "Professional",
+      "credentialId": "GOOG-AI-2024-E10",
+      "skills": ["Machine Learning", "Generative AI", "AI Ethics", "Data Processing", "Prompting"],
+      "description": "Foundational artificial intelligence principles, neural networks, ethics, prompt orchestration, and business integration."
+    },
+    {
+      "id": "CERT-011",
+      "title": "Career Essentials in Generative AI",
+      "issuer": "Microsoft & LinkedIn",
+      "year": "2024",
+      "category": "AI & Software",
+      "type": "Course",
+      "credentialId": "MS-GAI-2024-C11",
+      "skills": ["GenAI Essentials", "Copilot", "Prompt Design", "AI Productivity", "Ethics"],
+      "description": "Large Language Models, prompt crafting, Microsoft Copilot utilities, and ethical guidelines."
+    },
+    {
+      "id": "CERT-012",
+      "title": "Career Essentials in GitHub",
+      "issuer": "GitHub & LinkedIn",
+      "year": "2024",
+      "category": "AI & Software",
+      "type": "Course",
+      "credentialId": "GH-LIL-2024-P12",
+      "skills": ["Git Version Control", "GitHub Actions", "Pull Requests", "CI/CD", "Branching Strategies"],
+      "description": "Version control systems, GitHub collaborative operations, actions automation, and codebase repository hygiene."
+    },
+    {
+      "id": "CERT-013",
+      "title": "Embedded Systems & PCB Designing",
+      "issuer": "Chefronics Technologies",
+      "year": "2022",
+      "category": "Embedded & IoT",
+      "type": "Course",
+      "credentialId": "CHEF-PCB-2022-T13",
+      "skills": ["PCB Layout Design", "Altium Designer", "Circuit Schematics", "Soldering", "Hardware Assembly"],
+      "description": "Electronic circuit schematic design, PCB layout rendering, component selection, and soldering operations."
+    },
+    {
+      "id": "CERT-014",
+      "title": "MATLAB Onramp",
+      "issuer": "MathWorks",
+      "year": "2023",
+      "category": "Power & Electrical",
+      "type": "Course",
+      "credentialId": "MATH-MAT-2023-O14",
+      "skills": ["MATLAB Syntax", "Matrix Math", "Data Visualization", "Numerical Analysis", "Scripting"],
+      "description": "Foundational scripting, mathematical computing, data visualization, and matrix manipulations in MATLAB."
+    },
+    {
+      "id": "CERT-015",
+      "title": "Simulink Onramp",
+      "issuer": "MathWorks",
+      "year": "2023",
+      "category": "Power & Electrical",
+      "type": "Course",
+      "credentialId": "MATH-SIM-2023-O15",
+      "skills": ["Simulink Modeling", "Dynamic Systems", "Block Diagrams", "Simulation Control", "Electrical Modeling"],
+      "description": "Physical system modeling, signal flow simulations, feedback control design, and electrical power grid simulations."
+    },
+    {
+      "id": "CERT-016",
+      "title": "Battery Management Systems",
+      "issuer": "DIY Guru",
+      "year": "2023",
+      "category": "Power & Electrical",
+      "type": "Course",
+      "credentialId": "NPTEL-BMS-2023-B16",
+      "skills": ["BMS Architecture", "Cell Balancing", "State of Charge (SoC)", "Thermal Safety", "Battery Pack Design"],
+      "description": "Analysis of battery management systems, cell balancing topologies, safe operating area limits, and SoC estimation."
+    },
+    {
+      "id": "CERT-017",
+      "title": "EV Fundamentals",
+      "issuer": "DIY Guru",
+      "year": "2023",
+      "category": "Power & Electrical",
+      "type": "Course",
+      "credentialId": "LIL-EV-2023-F17",
+      "skills": ["EV Powertrain", "Braking Systems", "Hybrid Vehicles", "Electrical Motors", "EV Chargers"],
+      "description": "EV architecture, electric drive motors, regenerative braking, battery charging protocols, and hybrid configurations."
+    },
+    {
+      "id": "CERT-020",
+      "title": "Design Thinking for Innovators",
+      "issuer": "LinkedIn Learning",
+      "year": "2023",
+      "category": "AI & Software",
+      "type": "Course",
+      "credentialId": "LIL-DT-2023-D20",
+      "skills": ["Design Thinking", "Problem Reframing", "Prototyping", "User Empathy", "Innovation Loops"],
+      "description": "Iterative problem solving frameworks, user empathy mapping, prototyping, and validation feedback loops."
+    },
+    {
+      "id": "CERT-021",
+      "title": "IoT & Digital Transformation",
+      "issuer": "Cisco Networking Academy",
+      "year": "2023",
+      "category": "Embedded & IoT",
+      "type": "Course",
+      "credentialId": "CSCO-IDT-2023-I21",
+      "skills": ["Digital Transformation", "Big Data", "Edge Computing", "IoT Security", "Automation"],
+      "description": "IoT in business automation, cloud orchestration, edge device configurations, and digital system integration."
+    },
+    {
+      "id": "CERT-022",
+      "title": "Introduction to Internet of Things",
+      "issuer": "NPTEL",
+      "year": "2023",
+      "category": "Embedded & IoT",
+      "type": "Course",
+      "credentialId": "CSCO-IOT-2023-I22",
+      "skills": ["IoT Networks", "Gateway Routing", "Cybersecurity", "Arduino Interfacing", "Python Telemetry"],
+      "description": "IoT frameworks, microcontroller interfacing, network setups, packet transmission, and data analytics."
+    },
+    {
+      "id": "CERT-025",
+      "title": "Getting Started with Data",
+      "issuer": "IBM",
+      "year": "2023",
+      "category": "AI & Software",
+      "type": "Course",
+      "credentialId": "LIL-DAT-2023-G25",
+      "skills": ["Data Analysis", "SQL Basics", "Data Cleaning", "Analytics Dashboards"],
+      "description": "Data modeling, SQL, data cleaning, and reporting dashboards."
+    },
+    {
+      "id": "CERT-026",
+      "title": "Electrical Engineering Internship",
+      "issuer": "Coromandel International Limited",
+      "year": "2023",
+      "category": "Power & Electrical",
+      "type": "Internship",
+      "credentialId": "CIL-EE-2023-014",
+      "skills": ["Power Distribution", "Industrial Maintenance", "Single Line Diagrams", "Switchgears", "Substation Operations"],
+      "description": "Industrial training on power systems, electrical machines, switchgears, single line diagrams, and electrical maintenance."
+    },
+    {
+      "id": "CERT-027",
+      "title": "Embedded Systems Internship",
+      "issuer": "Datavalley India / APSCHE",
+      "year": "2026",
+      "category": "Embedded & IoT",
+      "type": "Internship",
+      "credentialId": "DV-86d2fed3",
+      "skills": ["Embedded Systems", "C Programming", "Microcontrollers", "Firmware Development", "APSCHE"],
+      "description": "Microcontroller programming, firmware development, and hardware interfacing in collaboration with APSCHE."
+    },
+    {
+      "id": "CERT-028",
+      "title": "Basics of Robotics",
+      "issuer": "Siemens",
+      "year": "2026",
+      "category": "Robotics & Hardware",
+      "type": "Course",
+      "credentialId": "45YNRZT5FH95",
+      "skills": ["Robotics Fundamentals", "Kinematics", "Robot Programming", "Industrial Automation", "Siemens Software"],
+      "description": "Robotic structures, coordinate systems, kinematic designs, and robotic automation systems."
+    },
+    {
+      "id": "CERT-029",
+      "title": "AI for Autonomous Vehicles and Robotics",
+      "issuer": "University of Michigan",
+      "year": "2026",
+      "category": "Robotics & Hardware",
+      "type": "Course",
+      "credentialId": "NCG7UCSW2CEO",
+      "skills": ["Autonomous Vehicles", "Computer Vision", "Sensor Fusion", "Robotics AI", "Path Planning"],
+      "description": "AI algorithms, perception, localization, and decision-making for self-driving vehicles and robotic agents."
+    },
+    {
+      "id": "CERT-030",
+      "title": "Powering the Future with Electrification",
+      "issuer": "MathWorks",
+      "year": "2026",
+      "category": "Power & Electrical",
+      "type": "Course",
+      "credentialId": "SP7WDPFIC9EB",
+      "skills": ["Electrification", "Electric Vehicles", "Power Electronics", "Battery Systems", "MATLAB", "Simulink"],
+      "description": "Electrification technologies, battery systems, power conversion, motor drives, and electrification grid modeling."
+    },
+    {
+      "id": "CERT-031",
+      "title": "Interfacing with the Arduino",
+      "issuer": "University of California, Irvine",
+      "year": "2026",
+      "category": "Embedded & IoT",
+      "type": "Course",
+      "credentialId": "BKTUOFUAW359",
+      "skills": ["Arduino", "Sensors Interfacing", "Actuators", "Hardware Prototyping", "C/C++ Programming"],
+      "description": "Connecting sensors and actuators, signal conditioning, shield design, and software integration."
+    },
+    {
+      "id": "CERT-032",
+      "title": "Modeling and Simulation with Simulink",
+      "issuer": "MathWorks",
+      "year": "2026",
+      "category": "Power & Electrical",
+      "type": "Course",
+      "credentialId": "2UBTY4UL2XJ3",
+      "skills": ["Simulink", "System Modeling", "Dynamic Simulation", "Control Systems", "MATLAB"],
+      "description": "Dynamic system design, block-diagram modeling, system simulation, and feedback control verification."
+    },
+    {
+      "id": "CERT-033",
+      "title": "Learn PLC and HMI from Scratch (Basic)",
+      "issuer": "Coursera",
+      "year": "2026",
+      "category": "Embedded & IoT",
+      "type": "Professional",
+      "credentialId": "LWCPAV54265H",
+      "skills": ["Siemens PLC", "TIA Portal", "HMI Design", "SCADA", "Ladder Logic", "Industrial Automation"],
+      "description": "3-course specialization covering Siemens PLC wiring, TIA Portal programming, HMI interface layouts, and SCADA."
+    },
+    {
+      "id": "CERT-034",
+      "title": "Designing and Simulating Physical Models",
+      "issuer": "MathWorks",
+      "year": "2026",
+      "category": "Power & Electrical",
+      "type": "Course",
+      "credentialId": "EFF3H17UVJM4",
+      "skills": ["Physical Modeling", "Simscape", "Simulink Simulation", "Multidomain Systems", "MATLAB"],
+      "description": "Physical model designs, multidomain fluid/thermal/mechanical simulations, and dynamic Simscape modeling."
+    },
+    {
+      "id": "CERT-035",
+      "title": "Battery Design and Management",
+      "issuer": "MathWorks",
+      "year": "2026",
+      "category": "Power & Electrical",
+      "type": "Course",
+      "credentialId": "FZF15DP9FSHQ",
+      "skills": ["Battery Design", "BMS", "Battery Modeling", "Thermal Management", "State of Charge", "Simulink"],
+      "description": "Battery cell characterization, state estimation, thermal modeling, battery pack design, and BMS simulation."
+    },
+    {
+      "id": "CERT-036",
+      "title": "Electric Motor Modeling and Control",
+      "issuer": "MathWorks",
+      "year": "2026",
+      "category": "Power & Electrical",
+      "type": "Course",
+      "credentialId": "58JN1U27RASY",
+      "skills": ["Motor Control", "Electric Motors", "Field-Oriented Control", "MATLAB", "Simulink", "Parameter Estimation"],
+      "description": "Electric motor modeling, parameter estimation, speed and torque control design, and simulation of motor drives."
+    },
+    {
+      "id": "CERT-037",
+      "title": "Power Conversion for Electronic Devices",
+      "issuer": "MathWorks",
+      "year": "2026",
+      "category": "Power & Electrical",
+      "type": "Course",
+      "credentialId": "RODEPZ0BL7HN",
+      "skills": ["Power Conversion", "DC-DC Converters", "Power Electronics", "Feedback Control", "MATLAB", "Simulink"],
+      "description": "Power electronic converter design, DC-DC converter modeling, feedback control loop design, and switching simulation."
+    },
+    {
+      "id": "CERT-038",
+      "title": "Electrified Systems Design Engineer",
+      "issuer": "MathWorks",
+      "year": "2026",
+      "category": "Power & Electrical",
+      "type": "Professional",
+      "credentialId": "ECURKPFR1H2Z",
+      "skills": ["System Modeling", "Simulink", "Power Electronics", "Electric Motors", "Battery Systems", "MATLAB", "Simscape"],
+      "description": "System-level modeling, simulation, and design of electrified systems combining power electronics, electric motors, and battery systems."
+    },
+    {
+      "id": "CERT-039",
+      "title": "AI Fundamentals: Foundations for Understanding AI",
+      "issuer": "IBM SkillsBuild",
+      "year": "2026",
+      "category": "AI & Software",
+      "type": "Course",
+      "credentialId": "IBM-AIF-2026",
+      "skills": ["AI Fundamentals", "Artificial Intelligence", "Machine Learning", "AI Ethics", "Generative AI"],
+      "description": "Fundamental artificial intelligence principles, neural networks, machine learning models, AI ethics, and practical applications."
+    }
+  ]
 }

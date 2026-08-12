@@ -1,101 +1,132 @@
 {
   "projects": [
     {
-      "name": "BudgetBuddy",
-      "tagline": "Personal finance made simple.",
-      "description": "BudgetBuddy is a modern, responsive personal finance application designed to help users track expenses, manage budgets, and gain insights into their spending habits.",
+      "name": "Sustainable Firefighter Monitoring System (SFMS / SFMD)",
+      "tagline": "Keeping firefighters safe with real-time monitoring.",
+      "description": "SFMD (Smart Firefighter Monitoring Device) is a wearable IoT safety device that monitors firefighter movement, location, and environmental conditions in real-time and displays data on a live dashboard. Won 1st place in Department, 1st place in IEI technical paper presentation, and 2nd Prize in Hardware at A-HACKS 2026.",
       "tech_stack": {
-        "frontend": "React 19",
-        "build_tool": "Vite",
-        "routing": "React Router DOM",
-        "backend_database": "Firebase (Auth, Cloud Firestore, Cloud Functions)",
-        "charting": "Chart.js and react-chartjs-2"
+        "hardware": "ESP32, DHT11, MQ-2, MPU6050, NEO-6M GPS, Push button, Buzzer, Battery",
+        "website": "Next.js",
+        "mobile_app": "React Native",
+        "database": "Firebase RTDB"
       },
       "status": "Live",
+      "link": "https://sfmd.rsmk.co.in/",
+      "achievement": "1st Place Dept, 1st Place IEI Paper Presentation, 2nd Prize Hardware Category A-HACKS 2026",
+      "category": "Core Engineering / IoT / Embedded Systems"
+    },
+    {
+      "name": "AutoExhaustFan",
+      "tagline": "Intelligent ventilation systems for safer spaces.",
+      "description": "AutoExhaustFan is an automated safety ventilation system that monitors air quality using an MQ-2 sensor and automatically triggers an exhaust fan via an Arduino UNO controller and 5V relay when harmful gas or smoke thresholds are breached.",
+      "tech_stack": {
+        "microcontroller": "Arduino UNO",
+        "sensors": "MQ-2 Gas & Smoke Sensor",
+        "actuator": "Exhaust Fan, 5V Relay Module",
+        "firmware": "C++ Arduino Firmware"
+      },
+      "status": "Live",
+      "link": "https://autoexhaustfan.rsmk.co.in/",
+      "category": "Core Engineering / Embedded Systems / Automation"
+    },
+    {
+      "name": "Solar Powered Dewatering System (SPDS)",
+      "tagline": "Sustainable solar-powered mining dewatering solution.",
+      "description": "SPDS (SolarSquad) is a sustainable, smart mine dewatering system designed to replace inefficient diesel pumps. Features high-efficiency PV array, battery storage (BESS), smart pump VFD control, remote SCADA monitoring, automated sun tracking (+25% yield), and soil moisture sensor-driven automated pumping.",
+      "tech_stack": {
+        "solar": "High-Efficiency PV Array with Automated Sun Tracking",
+        "storage": "Battery Energy Storage System (BESS)",
+        "control": "Smart VFD Pump Control, SCADA Remote Telemetry",
+        "sensing": "Soil Moisture & Environmental Sensors"
+      },
+      "status": "Live",
+      "link": "https://spds.rsmk.me/",
+      "category": "Core Engineering / Smart Grid / Green Energy / Automation"
+    },
+    {
+      "name": "Automation & PLC Projects",
+      "tagline": "Industrial automation learning & simulation projects.",
+      "description": "Practical industrial automation projects created while actively learning PLC programming and industrial communication protocols. Includes traffic-light HMI project, Factory I/O + CODESYS integration, Modbus TCP communication, and automatic conveyor sorting planning.",
+      "tech_stack": {
+        "software": "CODESYS, Factory I/O, Rockwell CCW",
+        "protocols": "Modbus TCP, Ladder Logic"
+      },
+      "status": "In Progress / Active Learning",
+      "link": null,
+      "category": "Core Engineering / Industrial Automation"
+    },
+    {
+      "name": "GridForge",
+      "tagline": "Smart-grid simulation project.",
+      "description": "Mini project focused on smart grid simulation modeling and interactive grid monitoring interface.",
+      "tech_stack": {
+        "simulation": "MATLAB / Simulink",
+        "interface": "Web interface"
+      },
+      "status": "Completed (Mini Project)",
+      "link": null,
+      "category": "Mini Project / Smart Grid"
+    },
+    {
+      "name": "BudgetBuddy",
+      "tagline": "Personal finance made simple.",
+      "description": "Hobby personal expense and budget tracking application with budget health visualization and live statistics.",
+      "tech_stack": {
+        "frontend": "React 19 + Vite + React Router DOM",
+        "backend": "Firebase (Auth, Firestore, Cloud Functions)"
+      },
+      "status": "Live (Hobby Project)",
       "link": "https://budgetbuddy.rsmk.co.in",
-      "category": "Productivity / Finance"
+      "category": "Hobby / Personal Project"
     },
     {
       "name": "ColorOhm",
-      "tagline": "Resistor color codes, instantly.",
-      "description": "ColorOhm is a resistor color code calculator that converts color codes to resistance values and vice versa. Available as both a web app and a mobile app.",
+      "tagline": "Resistor color codes calculator.",
+      "description": "Hobby engineering utility tool calculating resistor color codes to resistance values.",
       "tech_stack": {
         "web": "Vite + React",
         "mobile": "React Native + Expo"
       },
-      "status": "Live",
+      "status": "Live (Hobby Project)",
       "link": "https://colorohm.rsmk.me",
-      "category": "Engineering Utility"
+      "category": "Hobby / Engineering Utility"
     },
     {
-      "name": "SFMD",
-      "tagline": "Keeping firefighters safe with real-time monitoring.",
-      "description": "SFMD (Smart Firefighter Monitoring Device) is a wearable IoT device that monitors firefighter movement, location, and environmental conditions in real-time and displays data on a live dashboard. Won 2nd Prize in the Hardware Category at A-HACKS 2026 hackathon.",
+      "name": "Zest Academy Ecosystem",
+      "tagline": "Educational platform and student developer tools.",
+      "description": "Hobby educational platform ecosystem containing courses, articles, online compilers (C, Java, Python, SQL), student portfolio generator (ZestFolio), and study notes.",
       "tech_stack": {
-        "website": "Next.js",
-        "mobile_app": "React Native",
-        "hardware": "ESP32",
-        "sensors": "MPU-6050, NEO-6M GPS, DHT11, MQ-2",
-        "database": "Firebase RTDB"
+        "web": "React, Vite, Web Tooling",
+        "backend": "Firebase"
       },
-      "status": "Live",
-      "link": "https://sfmd.rsmk.co.in",
-      "achievement": "2nd Prize - Hardware Category, A-HACKS 2026 Hackathon",
-      "category": "IoT / Safety / Embedded Systems"
+      "status": "Live (Hobby Project)",
+      "link": "https://zestacademy.tech",
+      "category": "Hobby / Educational Project"
     },
     {
       "name": "AgriRover",
-      "tagline": "Smart agriculture, powered by robotics.",
-      "description": "AgriRover is a multipurpose agriculture rover designed to assist in farming tasks. It features remote control, live camera feed, and environmental sensing capabilities.",
+      "tagline": "Multipurpose agriculture rover.",
+      "description": "Agricultural robotics project developed as a helping project for a friend. Features remote control, live camera feed, and environmental sensing.",
       "tech_stack": {
-        "website": "Next.js",
-        "hardware": "ESP32 and ESP32-CAM"
+        "hardware": "ESP32, ESP32-CAM",
+        "website": "Next.js"
       },
-      "status": "Completed",
+      "status": "Completed (Helping Project)",
       "link": null,
-      "category": "IoT / Robotics / Agriculture"
-    },
-    {
-      "name": "ZestFolio",
-      "tagline": "Beautiful portfolios for every student.",
-      "description": "ZestFolio is a personal portfolio maker designed specifically for students. It allows users to create and showcase their portfolios easily. It is part of the ZestAcademy collaborative ecosystem.",
-      "tech_stack": {
-        "frontend": "Vite + React"
-      },
-      "status": "Live",
-      "link": "https://zestfolio.zestacademy.tech",
-      "category": "Education / Productivity"
-    },
-    {
-      "name": "ZestAcademy",
-      "tagline": "Learn, grow, and stay updated.",
-      "description": "ZestAcademy is an educational platform featuring articles, courses, news, and learning resources for students and developers.",
-      "tech_stack": {},
-      "status": "Live",
-      "link": "https://zestacademy.tech",
-      "category": "Education"
-    },
-    {
-      "name": "Zest Compiler",
-      "tagline": "Code online, instantly.",
-      "description": "Zest Compiler is an online multi-language compiler platform supporting C, Java, Python, HTML, SQL, and more. It is part of the ZestAcademy ecosystem.",
-      "tech_stack": {},
-      "status": "Live",
-      "link": "https://compilers.zestacademy.tech",
-      "category": "Education / Developer Tools"
+      "category": "Helping Project / Robotics"
     },
     {
       "name": "Project Mani",
-      "tagline": "The AI brain of RSMK Technologies.",
-      "description": "Project Mani is the centralized AI assistant ecosystem of RSMK Technologies. It powers intelligent chat across all RSMK websites using RAG and Groq AI.",
+      "tagline": "Personal AI Assistant.",
+      "description": "Hobby personal AI assistant ecosystem helping with decision-making, engineering learning, and project workflow.",
       "tech_stack": {
-        "ai_model": "Groq - llama-3.3-70b-versatile",
+        "ai": "Groq llama-3.3-70b-versatile",
         "backend": "Node.js + Express",
         "hosting": "Render"
       },
-      "status": "In Development",
+      "status": "In Development (Hobby / Personal Project)",
       "link": null,
-      "category": "AI / Assistant"
+      "category": "Hobby / Personal AI Project"
     }
   ]
 }
