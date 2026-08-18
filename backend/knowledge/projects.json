@@ -120,7 +120,7 @@
       "tagline": "Personal AI Assistant.",
       "description": "Hobby personal AI assistant ecosystem helping with decision-making, engineering learning, and project workflow.",
       "tech_stack": {
-        "ai": "Groq llama-3.3-70b-versatile",
+        "ai": "OpenRouter",
         "backend": "Node.js + Express",
         "hosting": "Render"
       },

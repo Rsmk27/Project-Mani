@@ -1,3 +1,5 @@
+const { getActiveModel } = require("./ai");
+
 const startTime = Date.now();
 
 const stats = {
@@ -39,7 +41,7 @@ function getStatus() {
   return {
     status: "Mani Core is live 🧠",
     version: "1.2.0",
-    model: "llama-3.3-70b-versatile",
+    model: getActiveModel(),
     uptime: {
       raw_ms,
       formatted,

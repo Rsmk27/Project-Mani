@@ -1,7 +1,7 @@
 require("dotenv").config();
 const express = require("express");
 const cors = require("cors");
-const { callGroq } = require("./src/groq");
+const { generateChatCompletion, getActiveModel } = require("./src/ai");
 const { buildSystemPrompt } = require("./src/prompt");
 const { validateChatRequest } = require("./src/validator");
 const { recordRequest, getStatus } = require("./src/stats");
@@ -53,7 +53,7 @@ app.get("/", (req, res) => {
   res.json({
     status: "Mani Core is live 🧠",
     version: "1.2.0",
-    model: "llama-3.3-70b-versatile",
+    model: getActiveModel(),
   });
 });
 
@@ -73,17 +73,18 @@ app.post("/api/chat", async (req, res) => {
 
   try {
     const systemPrompt = buildSystemPrompt(siteContext);
-    const response = await callGroq(systemPrompt, query, history);
+    const result = await generateChatCompletion(systemPrompt, query, history);
 
     recordRequest({ success: true, queryLength: query.length });
 
     res.json({
       success: true,
-      response,
-      model: "llama-3.3-70b-versatile",
+      response: result.content,
+      model: result.model || getActiveModel(),
     });
   } catch (err) {
     recordRequest({ success: false, queryLength: query.length });
+    console.error("Chat error:", err.message);
     res.status(500).json({ success: false, error: err.message });
   }
 });

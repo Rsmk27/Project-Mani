@@ -72,7 +72,7 @@ ${projectList}
 - BudgetBuddy: Expense/budget tracking app (React 19, Vite, Firebase). Hobby project.
 - ColorOhm: Resistor color-code calculator app (React Native, Expo, https://colorohm.rsmk.me). Hobby project.
 - Zest Academy Ecosystem: Educational platform & tools (Courses, Articles, Online compilers, ZestFolio, Zest Notes). Hobby project.
-- Project Mani: AI assistant ecosystem (Node.js, Express, Groq, Render). Hobby project.
+- Project Mani: AI assistant ecosystem (Node.js, Express, OpenRouter, Render). Hobby project.
 
 ### Helping Projects
 - AgriRover: Multipurpose agriculture rover (ESP32, ESP32-CAM, Next.js). Built as a helping project for a friend.

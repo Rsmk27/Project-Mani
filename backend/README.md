@@ -1,6 +1,6 @@
 # Mani Core Backend
 
-This is the backend server for **Mani**, the official AI assistant of RSMK Technologies. It handles requests from the Mani UI frontend, communicating with the Groq API (`llama-3.3-70b-versatile`) to generate intelligent, context-aware responses.
+This is the backend server for **Mani**, the official AI assistant of RSMK Technologies. It handles requests from the Mani UI frontend, communicating with the OpenRouter API (`meta-llama/llama-3.3-70b-instruct` by default) to generate intelligent, context-aware responses.
 
 ## Setup & Run
 
@@ -9,10 +9,11 @@ This is the backend server for **Mani**, the official AI assistant of RSMK Techn
    npm install
    ```
 2. **Environment Variables**:
-   Create a `.env` file based on `.env.example`. You will need your Groq API key:
+   Create a `.env` file based on `.env.example`. You will need your OpenRouter API key:
    ```env
    PORT=3001
-   GROQ_API_KEY=your_groq_api_key_here
+   OPENROUTER_API_KEY=your_openrouter_api_key_here
+   OPENROUTER_MODEL=meta-llama/llama-3.3-70b-instruct
    ```
 3. **Start the server**:
    ```bash
@@ -34,8 +35,8 @@ Checks if the Mani Core server is running.
 ```json
 {
   "status": "Mani Core is live 🧠",
-  "version": "1.0.0",
-  "model": "llama-3.3-70b-versatile"
+  "version": "1.2.0",
+  "model": "meta-llama/llama-3.3-70b-instruct"
 }
 ```
 
@@ -80,7 +81,7 @@ console.log(data.response);
 {
   "success": true,
   "response": "Project Mani is the central AI ecosystem for RSMK Technologies...",
-  "model": "llama-3.3-70b-versatile"
+  "model": "meta-llama/llama-3.3-70b-instruct"
 }
 ```
 
@@ -93,6 +94,6 @@ console.log(data.response);
 
 ## CORS Policies
 The backend is configured to only allow requests from specific RSMK domains. Currently, allowed origins include:
-- `http://localhost:3000` (for local development)
-- Exact matches: `https://rsmk.me`, `https://zestacademy.tech`, `https://zestfolio.zestacademy.tech`, `https://compilers.zestacademy.tech`
-- Subdomain matches ending in: `.rsmk.me`, `.rsmk.co.in`, `.vercel.app`
+- `http://localhost:3000` / `localhost` (for local development)
+- Exact matches: `https://rsmk.me`, `https://rsmk.co.in`, `https://zestacademy.tech`, `https://zestfolio.zestacademy.tech`, `https://compilers.zestacademy.tech`
+- Subdomain matches ending in: `.rsmk.me`, `.rsmk.co.in`

@@ -32,8 +32,8 @@ Think of Mani as the **single AI brain** that all RSMK websites share — each w
 │              Mani Core API (Render)                  │
 │                                                     │
 │  ┌─────────────────────────────────────────────┐   │
-│  │            Groq Inference Engine             │   │
-│  │         llama-3.3-70b-versatile              │   │
+│  │           OpenRouter Inference              │   │
+│  │       meta-llama/llama-3.3-70b-instruct     │   │
 │  └─────────────────────────────────────────────┘   │
 │                                                     │
 │  ┌──────────────┐    ┌──────────────────────────┐  │
@@ -59,13 +59,18 @@ Think of Mani as the **single AI brain** that all RSMK websites share — each w
 project-mani/
 ├── backend/                  → Mani Core API (Node.js + Express)
 │   ├── src/
-│   │   ├── groq.js           → Groq inference caller
+│   │   ├── ai/               → AI Provider layer (OpenRouter, Config)
+│   │   │   ├── index.js      → AI Provider dispatcher
+│   │   │   ├── openrouter.js → OpenRouter caller
+│   │   │   └── config.js     → AI configuration
 │   │   ├── knowledge.js      → RSMK knowledge base loader
-│   │   └── prompt.js         → System prompt builder
+│   │   ├── prompt.js         → System prompt builder
+│   │   ├── validator.js      → Request validation & sanitization
+│   │   └── stats.js          → Server metrics & tracking
 │   ├── knowledge/
 │   │   ├── rsmk-core.json    → RSMK Technologies + founder info
 │   │   ├── projects.json     → All RSMK projects data
-│   │   └── achievements.json → Hackathons, certifications, etc.
+│   │   └── founder-profile.json → Academic & engineering profile
 │   ├── index.js              → Express server entry point
 │   ├── .env.example
 │   └── package.json
@@ -83,7 +88,7 @@ project-mani/
 
 | Layer | Technology | Why |
 |---|---|---|
-| AI Model | Groq — `llama-3.3-70b-versatile` | Free, fastest inference, highly accurate |
+| AI Model | OpenRouter — `meta-llama/llama-3.3-70b-instruct` | Fast, accurate, highly reliable inference with flexible model switching |
 | Backend | Node.js + Express | Lightweight, easy to maintain |
 | Hosting | Render (free tier) | Always-on, no cold start issues |
 | Knowledge | Structured JSON files | Simple, fast, no vector DB needed in v1 |
@@ -97,7 +102,7 @@ project-mani/
 ### ✅ Phase 1 — Mani Core
 A standalone API that knows everything about RSMK Technologies.
 
-- Groq-powered backend
+- OpenRouter-powered backend (configurable models)
 - RSMK knowledge base (JSON)
 - System prompt with Mani's identity
 - Single `/api/chat` endpoint
@@ -163,7 +168,7 @@ POST /api/chat
 {
   "success": true,
   "response": "BudgetBuddy is an Android expense tracking app built by RSMK Technologies...",
-  "model": "llama-3.3-70b-versatile"
+  "model": "meta-llama/llama-3.3-70b-instruct"
 }
 ```
 
@@ -173,7 +178,8 @@ POST /api/chat
 
 | Variable | Description |
 |---|---|
-| `GROQ_API_KEY` | Groq API key from console.groq.com |
+| `OPENROUTER_API_KEY` | OpenRouter API key from openrouter.ai |
+| `OPENROUTER_MODEL` | AI Model (default: `meta-llama/llama-3.3-70b-instruct`) |
 | `PORT` | Server port (default: 3001) |
 
 ---
@@ -190,10 +196,10 @@ npm install
 
 # Setup environment
 cp .env.example .env
-# Add your GROQ_API_KEY to .env
+# Add your OPENROUTER_API_KEY to .env
 
 # Run the server
-node index.js
+npm start
 
 # Test
 curl -X POST http://localhost:3001/api/chat \
