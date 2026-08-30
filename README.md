@@ -24,7 +24,7 @@ Think of Mani as the **single AI brain** that all RSMK websites share — each w
 ```
 ┌─────────────────────────────────────────────────────┐
 │                  RSMK Websites                      │
-│   rsmk.me   │   BudgetBuddy   │   GridForge   │ ... │
+│   rsmk.tech  │   BudgetBuddy   │   GridForge   │ ... │
 └──────┬───────────────┬─────────────────┬────────────┘
        │               │                 │
        ▼               ▼                 ▼
@@ -111,7 +111,7 @@ A standalone API that knows everything about RSMK Technologies.
 ### 🔄 Phase 2 — Per-Site RAG Layer
 Each website gets its own knowledge layer injected into Mani.
 
-- `rsmk.me` → portfolio, skills, contact info
+- `rsmk.tech` → portfolio, skills, contact info
 - `BudgetBuddy` → app features, FAQs, how-to guides
 - `GridForge` → project docs, simulation info
 
@@ -264,4 +264,4 @@ For more in-depth information about backend environment setup, API endpoint stru
 
 **RSMK Technologies** — a personal tech brand by Srinivasa Manikanta Rajapantula.
 
-> rsmk.me · GitHub · LinkedIn
+> rsmk.tech · GitHub · LinkedIn

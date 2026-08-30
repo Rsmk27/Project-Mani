@@ -95,5 +95,6 @@ console.log(data.response);
 ## CORS Policies
 The backend is configured to only allow requests from specific RSMK domains. Currently, allowed origins include:
 - `http://localhost:3000` / `localhost` (for local development)
-- Exact matches: `https://rsmk.me`, `https://rsmk.co.in`, `https://zestacademy.tech`, `https://zestfolio.zestacademy.tech`, `https://compilers.zestacademy.tech`
-- Subdomain matches ending in: `.rsmk.me`, `.rsmk.co.in`
+- Exact matches: `https://rsmk.tech` (main domain), `https://rsmk.me`, `https://rsmk.co.in`, `https://zestacademy.tech`, `https://zestfolio.zestacademy.tech`, `https://compilers.zestacademy.tech`
+- Subdomain matches ending in: `.rsmk.tech`, `.rsmk.me`, `.rsmk.co.in`
+- Configurable via `ALLOWED_ORIGINS` environment variable (comma-separated origins)

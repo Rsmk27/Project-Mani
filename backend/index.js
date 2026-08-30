@@ -6,42 +6,18 @@ const { buildSystemPrompt } = require("./src/prompt");
 const { validateChatRequest } = require("./src/validator");
 const { recordRequest, getStatus } = require("./src/stats");
 
+const { isOriginAllowed } = require("./src/cors");
+
 const app = express();
 const PORT = process.env.PORT || 3001;
-
-const allowedOrigins = [
-  "https://rsmk.me",
-  "https://rsmk.co.in",
-  "https://zestacademy.tech",
-  "https://zestfolio.zestacademy.tech",
-  "https://compilers.zestacademy.tech",
-];
 
 app.use(
   cors({
     origin: function (origin, callback) {
-      if (!origin) return callback(null, true);
-
-      try {
-        const parsed = new URL(origin);
-        const hostname = parsed.hostname;
-
-        if (allowedOrigins.includes(origin)) {
-          return callback(null, true);
-        }
-
-        if (hostname === "localhost" || hostname === "127.0.0.1") {
-          return callback(null, true);
-        }
-
-        if (hostname.endsWith(".rsmk.me") || hostname.endsWith(".rsmk.co.in")) {
-          return callback(null, true);
-        }
-
-        callback(new Error("Not allowed by CORS"));
-      } catch (err) {
-        callback(new Error("Invalid Origin"));
+      if (isOriginAllowed(origin)) {
+        return callback(null, true);
       }
+      callback(new Error("Not allowed by CORS"));
     },
   })
 );

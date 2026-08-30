@@ -24,18 +24,20 @@ async function runTests() {
   assert.ok(kb.founderProfile, "founderProfile must exist");
   console.log(`   ✓ Loaded ${kb.projects.projects.length} projects from knowledge base`);
 
-  const systemPrompt = buildSystemPrompt("User is on https://rsmk.me");
+  const systemPrompt = buildSystemPrompt("User is on https://rsmk.tech");
   assert.ok(systemPrompt.includes("Mani AI"), "System prompt should contain Mani AI identity");
   assert.ok(systemPrompt.includes("Srinivasa Manikanta Rajapantula"), "System prompt should contain founder name");
   assert.ok(systemPrompt.includes("Sustainable Firefighter Monitoring System"), "System prompt should contain SFMS project");
-  assert.ok(systemPrompt.includes("User is on https://rsmk.me"), "System prompt should include site context");
-  console.log("   ✓ RAG system prompt built and verified successfully");
+  assert.ok(systemPrompt.includes("User is on https://rsmk.tech"), "System prompt should include site context");
+  assert.strictEqual(kb.rsmkCore.founder.links.portfolio, "https://rsmk.tech", "Main portfolio link should be rsmk.tech");
+  assert.ok(systemPrompt.includes("[Portfolio](https://rsmk.tech)"), "Prompt should provide rsmk.tech portfolio link");
+  console.log("   ✓ RAG system prompt built and verified successfully with rsmk.tech as main domain");
 
   // 3. Check Validation & Conversation History
   console.log("\n3. Testing Request Validation & History Handling...");
   const validReq = validateChatRequest({
     query: "Who is Manikanta?",
-    siteContext: "rsmk.me",
+    siteContext: "rsmk.tech",
     history: [
       { role: "user", content: "Hi" },
       { role: "assistant", content: "Hello! How can I help?" },
@@ -87,6 +89,31 @@ async function runTests() {
   assert.strictEqual(status.model, getActiveModel());
   assert.ok(status.requests.total >= 1);
   console.log(`   ✓ Status model is dynamically linked to: ${status.model}`);
+
+  // 7. Check CORS Origin Authorization (including rsmk.tech)
+  console.log("\n7. Testing CORS Origin Authorization...");
+  const { isOriginAllowed } = require("./src/cors");
+  
+  // rsmk.tech tests
+  assert.strictEqual(isOriginAllowed("https://rsmk.tech"), true, "https://rsmk.tech must be allowed");
+  assert.strictEqual(isOriginAllowed("http://rsmk.tech"), true, "http://rsmk.tech must be allowed");
+  assert.strictEqual(isOriginAllowed("https://chat.rsmk.tech"), true, "Subdomain chat.rsmk.tech must be allowed");
+  assert.strictEqual(isOriginAllowed("https://api.rsmk.tech:3001"), true, "Origin with port on rsmk.tech must be allowed");
+
+  // Existing ecosystem domains
+  assert.strictEqual(isOriginAllowed("https://rsmk.me"), true, "https://rsmk.me must be allowed");
+  assert.strictEqual(isOriginAllowed("https://portfolio.rsmk.me"), true, "Subdomain portfolio.rsmk.me must be allowed");
+  assert.strictEqual(isOriginAllowed("https://rsmk.co.in"), true, "https://rsmk.co.in must be allowed");
+  assert.strictEqual(isOriginAllowed("https://zestacademy.tech"), true, "https://zestacademy.tech must be allowed");
+  assert.strictEqual(isOriginAllowed("http://localhost:3000"), true, "Localhost must be allowed");
+  assert.strictEqual(isOriginAllowed("http://127.0.0.1:8080"), true, "127.0.0.1 must be allowed");
+  assert.strictEqual(isOriginAllowed(undefined), true, "Requests without origin (server/mobile) must be allowed");
+
+  // Malicious / unauthorized domains
+  assert.strictEqual(isOriginAllowed("https://evil.com"), false, "evil.com must be rejected");
+  assert.strictEqual(isOriginAllowed("https://evil-rsmk.tech"), false, "Lookalike evil-rsmk.tech must be rejected");
+  assert.strictEqual(isOriginAllowed("https://rsmk.tech.attacker.com"), false, "Spoofed suffix domain must be rejected");
+  console.log("   ✓ CORS origin validation verified for rsmk.tech and subdomains");
 
   console.log("\n✅ All unit and integration verification tests passed successfully!");
 }

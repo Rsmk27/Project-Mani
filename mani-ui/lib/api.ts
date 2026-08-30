@@ -26,7 +26,7 @@ export async function chatWithMani(
       history,
       siteContext:
         siteContext ||
-        "User is on mani.rsmk.me — the official Mani AI chat interface.",
+        "User is on mani.rsmk.tech — the official Mani AI chat interface.",
     }),
   });
 
