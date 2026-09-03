@@ -31,6 +31,17 @@ async function runTests() {
   assert.ok(systemPrompt.includes("User is on https://rsmk.tech"), "System prompt should include site context");
   assert.strictEqual(kb.rsmkCore.founder.links.portfolio, "https://rsmk.tech", "Main portfolio link should be rsmk.tech");
   assert.ok(systemPrompt.includes("[Portfolio](https://rsmk.tech)"), "Prompt should provide rsmk.tech portfolio link");
+
+  // Verify all knowledge base project links have migrated from rsmk.me and rsmk.co.in to rsmk.tech
+  kb.projects.projects.forEach((proj) => {
+    if (proj.link) {
+      assert.ok(!proj.link.includes("rsmk.me"), `Project ${proj.name} should not use rsmk.me: ${proj.link}`);
+      assert.ok(!proj.link.includes("rsmk.co.in"), `Project ${proj.name} should not use rsmk.co.in: ${proj.link}`);
+    }
+  });
+  assert.ok(!systemPrompt.includes("rsmk.me"), "System prompt should not contain any rsmk.me links");
+  assert.ok(!systemPrompt.includes("rsmk.co.in"), "System prompt should not contain any rsmk.co.in links");
+
   console.log("   ✓ RAG system prompt built and verified successfully with rsmk.tech as main domain");
 
   // 3. Check Validation & Conversation History

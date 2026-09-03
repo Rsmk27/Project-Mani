@@ -11,7 +11,7 @@
         "database": "Firebase RTDB"
       },
       "status": "Live",
-      "link": "https://sfmd.rsmk.co.in/",
+      "link": "https://sfmd.rsmk.tech/",
       "achievement": "1st Place Dept, 1st Place IEI Paper Presentation, 2nd Prize Hardware Category A-HACKS 2026",
       "category": "Core Engineering / IoT / Embedded Systems"
     },
@@ -26,7 +26,7 @@
         "firmware": "C++ Arduino Firmware"
       },
       "status": "Live",
-      "link": "https://autoexhaustfan.rsmk.co.in/",
+      "link": "https://autoexhaustfan.rsmk.tech/",
       "category": "Core Engineering / Embedded Systems / Automation"
     },
     {
@@ -40,7 +40,7 @@
         "sensing": "Soil Moisture & Environmental Sensors"
       },
       "status": "Live",
-      "link": "https://spds.rsmk.me/",
+      "link": "https://spds.rsmk.tech/",
       "category": "Core Engineering / Smart Grid / Green Energy / Automation"
     },
     {
@@ -76,7 +76,7 @@
         "backend": "Firebase (Auth, Firestore, Cloud Functions)"
       },
       "status": "Live (Hobby Project)",
-      "link": "https://budgetbuddy.rsmk.co.in",
+      "link": "https://budgetbuddy.rsmk.tech",
       "category": "Hobby / Personal Project"
     },
     {
@@ -88,7 +88,7 @@
         "mobile": "React Native + Expo"
       },
       "status": "Live (Hobby Project)",
-      "link": "https://colorohm.rsmk.me",
+      "link": "https://colorohm.rsmk.tech",
       "category": "Hobby / Engineering Utility"
     },
     {
